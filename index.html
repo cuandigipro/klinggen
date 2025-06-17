@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Generator | Image-to-Video</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+    <div class="container">
+        <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-4">
+            Image-to-Video Prompt Generator
+        </h1>
+        <p class="text-gray-400 mb-10">Unggah gambar dan dapatkan prompt video yang dibuat oleh AI untuk Kling.</p>
+
+        <div class="w-full mb-6 text-left">
+            <label for="apiKeyInput" class="font-semibold text-gray-300">Gemini API Key Anda:</label>
+            <input type="password" id="apiKeyInput" class="api-key-input mt-2" placeholder="Masukkan API Key Anda di sini...">
+        </div>
+
+        <label for="imageUpload" class="custom-file-upload">
+            <svg class="w-12 h-12 mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+            <span class="font-semibold">Tarik & Lepas atau Klik untuk Mengunggah</span>
+            <span class="text-xs text-gray-500 mt-1">PNG, JPG, GIF, atau WEBP</span>
+        </label>
+        <input type="file" id="imageUpload" accept="image/*">
+
+        <img id="imagePreview" class="image-preview mx-auto" src="#" alt="Pratinjau Gambar">
+
+        <button id="generateButton" disabled>Buat Prompt Animasi</button>
+
+        <div id="loadingSpinner" class="loading-spinner"></div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div id="resultsContainer" style="display: none;">
+            <p class="output-label">Prompt Animasi:</p>
+            <div class="prompt-output" id="descriptionOutput"></div>
+            
+            <p class="output-label">Negative Prompt (Saran):</p>
+            <div class="prompt-output" id="negativePromptOutput"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
